@@ -1,0 +1,603 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>Главная</title>
+    <base href=""/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <meta name="description" content=""/>
+    <meta name="keywords" content=""/>
+
+    <link href="css/bootstrap.min.css" tppabs="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <script src="js/jquery-1.11.3.min.js" tppabs="js/jquery-1.11.3.min.js" type="text/javascript"></script>
+    <script src="js/jquery.inputmask.min.js" tppabs="js/jquery.inputmask.min.js" type="text/javascript"></script>
+    <script src="js/bootstrap.min.js" tppabs="js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="js/main.js" tppabs="js/main.js" type="text/javascript"></script>
+
+    <link href="css/site.css" tppabs="css/site.css" rel="stylesheet" type="text/css"/>
+    <link href="css/common.css" tppabs="css/common.css" rel="stylesheet" type="text/css"/>
+    <link href="css/1.css" tppabs="css/1.css" rel="stylesheet" type="text/css"/>
+    <script src="js/jquery.browser.min.js" tppabs="js/jquery.browser.min.js" type="text/javascript"></script>
+    <link href="js/fancybox/jquery.fancybox-1.3.4.css" tppabs="js/fancybox/jquery.fancybox-1.3.4.css" rel="stylesheet" type="text/css"/>
+    <script src="js/fancybox/jquery.fancybox-1.3.4.pack.js" tppabs="js/fancybox/jquery.fancybox-1.3.4.pack.js" type="text/javascript"></script>
+    <link rel="shortcut icon" href="img/favicon.png" type="image/png"/>
+    <script type="text/javascript">var currLang = '';</script>
+    <script type="text/javascript">var mainHeaderHeight = 74;</script>
+
+</head>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog cons-dialog" role="document">
+        <div class="modal-content cons-modal main-box">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <div class="main-act">Успейте получить по <br><span>скидке -50%</span></div>
+            <form action="zakaz.php" method="post">
+
+                <input name="name" class="name main-name" placeholder="Введите Ваше имя" type="text" required/>
+                <input name="phone" class="phone main-tell" placeholder="Введите Ваш телефон" type="text" required/>
+                <button type="submit" class="main-button">заказать сейчас</button>
+                <input type="hidden" name="s1" class="price_field_s1" value="759" />
+                <input type="hidden" name="s2" class="price_field_s2" value="1273" />
+                <input type="hidden" name="s3" class="price_field_s3" value="" />
+                <input type="hidden" name="utm_source" value="" />
+                <input type="hidden" name="utm_medium"  value="" />
+                <input type="hidden" name="utm_term"  value="" />
+                <input type="hidden" name="utm_content"  value="" />
+                <input type="hidden" name="utm_campaign" value="" />
+                <input type="hidden" name="server_name" value="mi-band.shop365.top" />
+                <input type="hidden" name="php_self" value="/index.php" />
+                <input type="hidden" name="uid" value="">
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+
+<body>
+
+
+
+<div class="root">
+    <div id="wb_bgs_cont">
+        <div id="wb_page_1_bg"></div>
+        <div id="wb_page_2_bg"></div>
+        <div id="wb_page_3_bg"></div>
+        <div id="wb_page_8_bg"></div>
+        <div id="wb_page_7_bg"></div>
+        <div id="wb_page_4_bg"></div>
+        <div id="wb_page_5_bg"></div>
+        <div id="wb_page_6_bg"></div>
+        <div id="wb_page_9_bg"></div>
+    </div>
+    <div id="wb_header_bg"></div>
+    <div id="wb_sbg_placeholder"></div>
+    <div class="vbox wb_container wb_header_fixed" id="wb_header">
+
+        <div id="wb_element_instance0" class="wb_element wb-menu wb-menu-mobile"><a
+                class="btn btn-default btn-collapser"><span class="icon-bar"></span><span class="icon-bar"></span><span
+                class="icon-bar"></span></a>
+            <ul class="hmenu menu-landing">
+                <!-- <li class="active"><a href="#%D0%93%D0%BB%D0%B0%D0%B2%D0%BD%D0%B0%D1%8F" target="_self" title="Главная">Главная</a></li> -->
+                <li><a href="#%D0%9E%D1%81%D0%BE%D0%B1%D0%B5%D0%BD%D0%BD%D0%BE%D1%81%D1%82%D0%B8" target="_self" title="Особенности">Особенности</a></li>
+                <li><a href="#%D0%A5%D0%B0%D1%80%D0%B0%D0%BA%D1%82%D0%B5%D1%80%D0%B8%D1%81%D1%82%D0%B8%D0%BA%D0%B8" target="_self" title="Характеристики">Характеристики</a></li>
+                <li><a href="#%D0%9A%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%82%D0%B0%D1%86%D0%B8%D1%8F" target="_self" title="Комплектация">Комплектация</a></li>
+                <li><a href="#%D0%B4%D0%BE%D1%81%D1%82%D0%B0%D0%B2%D0%BA%D0%B0" target="_self" title="доставка">доставка</a></li>
+            </ul>
+            <div class="clearfix"></div>
+        </div>
+        <div id="wb_element_instance1" class="wb_element" style=" line-height: normal;"><p class="wb-stl-normal"></p>
+        </div>
+        <div id="wb_element_instance2" class="wb_element wb_element_picture">
+<!--            <a href="#%D0%93%D0%BB%D0%B0%D0%B2%D0%BD%D0%B0%D1%8F"><img alt="gallery/logo_white_small" src="img/27984f7f9ac40d99b8e99dd8a10cd6fe_110x33.png"></a>-->
+        </div>
+        <div id="wb_element_instance3" class="wb_element wb_element_picture">
+<!--            <img alt="gallery/магазин" src="img/149020016ddbab5bf1f1c78cf7c9a4a7_120x20.png">-->
+        </div>
+    </div>
+    <div class="vbox wb_container" id="wb_main">
+
+        <div class="wb_page" id="page_1"><a name="%D0%93%D0%BB%D0%B0%D0%B2%D0%BD%D0%B0%D1%8F" class="wb_page_anchor" id="page_1_anchor"></a>
+            <div id="wb_element_instance4" class="wb_element" data-toggle="modal" data-target="#myModal"><a class="wb_button" ><span>   Купить</span></a>
+            </div>
+            <div id="wb_element_instance5" class="wb_element" style=" line-height: normal;"><p class="wb-stl-normal">
+                <span style="color:#000000;">Измеряй текущее время, количество шагов, сердечный пульс, пройденное расстояние, количество сожженных калорий </span><span
+                    style="color: rgb(0, 0, 0); background-color: transparent;">и другие данные с новым фитнес-браслетом от Xiaomi</span>
+            </p>
+            </div>
+            <div id="wb_element_instance6" class="wb_element wb_element_picture"><img alt="gallery/arrow" src="img/90c66d130911bc80ba15dcda7479a6c5_55x28.png" tppabs="img/90c66d130911bc80ba15dcda7479a6c5_55x28.png">
+            </div>
+            <div id="wb_element_instance7" class="wb_element"><a class="wb_button" href="#%D0%9E%D1%81%D0%BE%D0%B1%D0%B5%D0%BD%D0%BD%D0%BE%D1%81%D1%82%D0%B8"><span>Подробнее</span></a>
+            </div>
+            <div id="wb_element_instance8" class="wb_element" style=" line-height: normal;"><h4 class="wb-stl-pagetitle"><span style="color:#000000;">XIAOMI MI BAND 2</span></h4>
+            </div>
+            <div id="wb_element_instance9" class="wb_element" style=" line-height: normal;"><p class="wb-stl-normal" style="text-align: right;">
+                <span style="color:#949494;"><s>599грн</s></span></p>
+            </div>
+            <div id="wb_element_instance10" class="wb_element" style=" line-height: normal;"><h3
+                    class="wb-stl-heading3"><span style="color:#000000;">249грн</span></h3>
+            </div>
+            <div id="wb_element_instance11" class="wb_element wb_element_picture"><img alt="gallery/shopping-basket (2)" src="img/38f53c51c22925e29fa6f60594c73f3a_24x24.png" tppabs="img/38f53c51c22925e29fa6f60594c73f3a_24x24.png">
+            </div>
+            <div id="wb_element_instance12" class="wb_element wb_element_picture"><img alt="gallery/original" src="img/19e1d53f9c2d5ec7e0749844f2349498_190x189.png" tppabs="img/19e1d53f9c2d5ec7e0749844f2349498_190x189.png">
+            </div>
+            <div id="wb_element_instance14" class="wb_element wb_element_picture"><img
+                    alt="gallery/htb1aukxovxxxxxwxfxxq6xxfxxx7-2"
+                    src="img/5dec461d51d80cdba7b0d7a67ebbc057_760x760.png" tppabs="img/5dec461d51d80cdba7b0d7a67ebbc057_760x760.png"></div>
+            <div id="wb_element_instance15" class="wb_element" style=" overflow: hidden;">
+            </div>
+        </div>
+        <div class="wb_page" id="page_2"><a name="%D0%9E%D1%81%D0%BE%D0%B1%D0%B5%D0%BD%D0%BD%D0%BE%D1%81%D1%82%D0%B8"
+                                            class="wb_page_anchor" id="page_2_anchor"></a>
+            <div id="wb_element_instance16" class="wb_element" style=" line-height: normal;">
+                <ul>
+                    <li><span style="color:#000000;"><span class="wb-stl-special"><span class="wb-stl-highlight">Показ времени</span></span></span>
+                    </li>
+                    <li><span style="color:#000000;"><span class="wb-stl-special"><span class="wb-stl-highlight">Отображение пройденных шагов</span></span></span>
+                    </li>
+                    <li><span style="color:#000000;"><span class="wb-stl-special"><span class="wb-stl-highlight">Измерение сердечного ритма</span></span></span>
+                    <li><span style="color:#000000;"><span class="wb-stl-special"><span class="wb-stl-highlight">Функция подсчета калорий</span></span></span>
+                    </li>
+                    <li><span style="color:#000000;"><span class="wb-stl-special"><span class="wb-stl-highlight">Аккумулятор 70 мА*ч. На одной подзарядке MiBand способен работать до 20 дней</span></span></span>
+                    </li>
+                    <li><span style="color:#000000;"><span class="wb-stl-special"><span class="wb-stl-highlight">Bluetooth: 4.0 версия Android 4.3 и выше</span></span></span>
+                    </li>
+                    <li><span style="color:#000000;"><span class="wb-stl-special"><span class="wb-stl-highlight">Материал корпуса и браслета: Алюминий, пластик</span></span></span>
+                    </li>
+                </ul>
+            </div>
+            <div id="wb_element_instance17" class="wb_element wb_gallery">
+                <script type="text/javascript" src="js/WB_Gallery.class.js" tppabs="js/WB_Gallery.class.js"></script>
+                <script type="text/javascript">
+                    $(function () {
+                        new WB_Gallery({
+                            "id": "wb_element_instance17",
+                            "type": "slideshow",
+                            "interval": 4,
+                            "speed": 400,
+                            "width": 680,
+                            "height": 670,
+                            "border": {
+                                "color": "#FFFFFF",
+                                "style": "none",
+                                "weight": 5,
+                                "radius": null,
+                                "css": {"border": "5px none #FFFFFF"}
+                            },
+                            "padding": 10,
+                            "thumbWidth": 64,
+                            "thumbHeight": 64,
+                            "images": [{
+                                "thumb": "img/8ec6498f500666fe17598c9a4e34c8d6_gallery.jpg.thumb.jpg"/*tpa=img//8ec6498f500666fe17598c9a4e34c8d6_gallery.jpg.thumb.jpg*/,
+                                "image": "img/8ec6498f500666fe17598c9a4e34c8d6_gallery.jpg"/*tpa=img//8ec6498f500666fe17598c9a4e34c8d6_gallery.jpg*/,
+                                "width": 1000,
+                                "height": 1000
+                            }, {
+                                "thumb": "img/e83d2a7ce7afb27b851854174f165ead_gallery.jpg.thumb.jpg"/*tpa=img//e83d2a7ce7afb27b851854174f165ead_gallery.jpg.thumb.jpg*/,
+                                "image": "img/e83d2a7ce7afb27b851854174f165ead_gallery.jpg"/*tpa=img//e83d2a7ce7afb27b851854174f165ead_gallery.jpg*/,
+                                "width": 1000,
+                                "height": 1000
+                            }, {
+                                "thumb": "img/f14a7bf121783fd88bd0554388eeee5c_gallery.jpg.thumb.jpg"/*tpa=img//f14a7bf121783fd88bd0554388eeee5c_gallery.jpg.thumb.jpg*/,
+                                "image": "img/f14a7bf121783fd88bd0554388eeee5c_gallery.jpg"/*tpa=img//f14a7bf121783fd88bd0554388eeee5c_gallery.jpg*/,
+                                "width": 1000,
+                                "height": 1000
+                            }, {
+                                "thumb": "img/d88a1c7118c09244daedbd19a5734c6a_gallery.jpg.thumb.jpg"/*tpa=img//d88a1c7118c09244daedbd19a5734c6a_gallery.jpg.thumb.jpg*/,
+                                "image": "img/d88a1c7118c09244daedbd19a5734c6a_gallery.jpg"/*tpa=img//d88a1c7118c09244daedbd19a5734c6a_gallery.jpg*/,
+                                "width": 1000,
+                                "height": 1000
+                            }, {
+                                "thumb": "img/d906659a8211258b028117cc51189a9d_gallery.jpg.thumb.jpg"/*tpa=img//d906659a8211258b028117cc51189a9d_gallery.jpg.thumb.jpg*/,
+                                "image": "img/d906659a8211258b028117cc51189a9d_gallery.jpg"/*tpa=img//d906659a8211258b028117cc51189a9d_gallery.jpg*/,
+                                "width": 900,
+                                "height": 900
+                            }]
+                        });
+                    });
+                </script>
+            </div>
+            <div id="wb_element_instance18" class="wb_element" style=" line-height: normal;"><h1
+                    class="wb-stl-heading1"><span style="color:#000000;">ОСОБЕННОСТИ</span></h1>
+            </div>
+        </div>
+        <div class="wb_page" id="page_3"><a
+                name="%D0%A3%D1%81%D0%BE%D0%B2%D0%B5%D1%80%D1%88%D0%B5%D0%BD%D1%81%D1%82%D0%B2%D0%BE%D0%B2%D0%B0"
+                class="wb_page_anchor" id="page_3_anchor"></a>
+            <div id="wb_element_instance19" class="wb_element" style=" line-height: normal;"><p
+                    style="text-align: center;"> </p>
+
+                <p class="wb-stl-normal"><span style="color:#000000;"><span class="wb-stl-highlight">Xiaomi Mi Band 2 в паре с приложением Mi Fit <span
+                        style="background-color: transparent;">будут информировать вас о количестве пройденных шагов, подсчитывать сожженные калории и уведомлять о скорости бега и состоянии сердечного ритма</span></span></span>
+                </p>
+
+                <p> </p>
+
+                <p> </p>
+
+                <p> </p>
+
+                <p> </p>
+
+                <p> </p>
+
+                <p> </p>
+
+                <p> </p>
+
+                <p> </p>
+
+                <p> </p>
+            </div>
+            <div id="wb_element_instance20" class="wb_element" style=" line-height: normal;"><h1
+                    class="wb-stl-heading1"> </h1>
+
+                <h1 class="wb-stl-heading1"><span style="color:#000000;">ИЗМЕРЯЙ</span></h1>
+            </div>
+            <div id="wb_element_instance21" class="wb_element wb_element_picture"><img alt="gallery/sh-03-b-1080-2"
+                                                                                       src="img/cc125fb25bda620d52c177df629ce4f8_1920x792.jpg" tppabs="img/cc125fb25bda620d52c177df629ce4f8_1920x792.jpg">
+            </div>
+        </div>
+        <div class="wb_page" id="page_8"><a
+                name="%D0%9F%D1%80%D0%B8%D0%BD%D0%B8%D0%BC%D0%B0%D0%B9-%D0%B2%D1%8B%D0%B7%D0%BE%D0%B2%D1%8B"
+                class="wb_page_anchor" id="page_8_anchor"></a>
+            <div id="wb_element_instance22" class="wb_element" style=" line-height: normal;"><h1 class="wb-stl-heading1"
+                                                                                                 style="text-align: center;">
+                <span style="color:#ffffff;">БУДЬТЕ НА СВЯЗИ</span></h1>
+            </div>
+            <div id="wb_element_instance23" class="wb_element" style=" line-height: normal;"><p
+                    style="text-align: center;"><span style="color:#ffffff;"><span
+                    style='font-family: "Open Sans", sans-serif; font-size: 19px; text-align: left; background-color: transparent;'>Mi Band 2 своевременно уведомляет Вас о входящем вызове или сообщении. С ним Вы не пропустите важный звонок или уведомление даже находясь в многолюдной толпе на оживленной улице.</span></span>
+            </p>
+
+                <p class="wb-stl-normal" style="text-align: center;"> </p>
+
+                <p> </p>
+
+                <p> </p>
+
+                <p> </p>
+
+                <p> </p>
+
+                <p> </p>
+            </div>
+            <div id="wb_element_instance24" class="wb_element wb_element_picture"><img alt="gallery/вызов 1"
+                                                                                       src="img/457eb49d33e4f7ba8497fdc9cda299e8_1950x800.jpg" tppabs="img/457eb49d33e4f7ba8497fdc9cda299e8_1950x800.jpg">
+            </div>
+        </div>
+        <div class="wb_page" id="page_7"><a
+                name="%D0%9D%D0%BE%D0%B2%D0%B0%D1%8F-c%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0" class="wb_page_anchor"
+                id="page_7_anchor"></a>
+            <div id="wb_element_instance25" class="wb_element wb_element_picture"><img
+                    alt="gallery/htb1g9iknvxxxxamxfxxq6xxfxxxc"
+                    src="img/e40e48d29c465068fc9bb2d34c907615_1000x1000.jpg" tppabs="img/e40e48d29c465068fc9bb2d34c907615_1000x1000.jpg"></div>
+        </div>
+        <div class="wb_page" id="page_4"><a
+                name="%D0%A5%D0%B0%D1%80%D0%B0%D0%BA%D1%82%D0%B5%D1%80%D0%B8%D1%81%D1%82%D0%B8%D0%BA%D0%B8"
+                class="wb_page_anchor" id="page_4_anchor"></a>
+            <div id="wb_element_instance26" class="wb_element" style=" line-height: normal;"><h1 class="wb-stl-heading1"
+                                                                                                 style="text-align: center;">
+                <span style="color:#000000;">ХАРАКТЕРИСТИКИ</span></h1>
+            </div>
+            <div id="wb_element_instance27" class="wb_element wb_element_picture"><img alt="gallery/android"
+                                                                                       src="img/a21bb69e42aaec7ce827822358ddabb9_64x64.png" tppabs="img/a21bb69e42aaec7ce827822358ddabb9_64x64.png">
+            </div>
+            <div id="wb_element_instance28" class="wb_element wb_element_picture"><img alt="gallery/battery"
+                                                                                       src="img/f37806047960a7e75894167a97e195ac_64x64.png" tppabs="img/f37806047960a7e75894167a97e195ac_64x64.png">
+            </div>
+            <div id="wb_element_instance29" class="wb_element wb_element_picture"><img alt="gallery/bluetooth"
+                                                                                       src="img/0c1d3d1667096e6c89cfdd3bec170818_64x64.png" tppabs="img/0c1d3d1667096e6c89cfdd3bec170818_64x64.png">
+            </div>
+            <div id="wb_element_instance30" class="wb_element wb_element_picture"><img alt="gallery/brightness"
+                                                                                       src="img/abf2f25428f6b4bff15cc32f5ece7188_64x64.png" tppabs="img/abf2f25428f6b4bff15cc32f5ece7188_64x64.png">
+            </div>
+            <div id="wb_element_instance31" class="wb_element wb_element_picture"><img alt="gallery/apple"
+                                                                                       src="img/183cfaf384ebe96179025fe0ba605b4a_64x64.png" tppabs="img/183cfaf384ebe96179025fe0ba605b4a_64x64.png">
+            </div>
+            <div id="wb_element_instance32" class="wb_element" style=" line-height: normal;"><p class="wb-stl-normal"
+                                                                                                style="text-align: center;">
+                <span style="color:#000000;">Android 4.4 </span></p>
+
+                <p class="wb-stl-normal" style="text-align: center;"><span
+                        style="color:#000000;">и версии позднее</span></p>
+            </div>
+            <div id="wb_element_instance33" class="wb_element" style=" line-height: normal;"><p class="wb-stl-normal"
+                                                                                                style="text-align: center;">
+                <span style="color:#000000;">iOS 7.0</span></p>
+
+                <p class="wb-stl-normal" style="text-align: center;"><span
+                        style="color:#000000;">и версии позднее</span></p>
+            </div>
+            <div id="wb_element_instance34" class="wb_element" style=" line-height: normal;"><p class="wb-stl-normal">
+                <span style="color:#000000;">OLED дисплей</span></p>
+            </div>
+            <div id="wb_element_instance35" class="wb_element" style=" line-height: normal;"><p class="wb-stl-normal">
+                <span style="color:#000000;">LiPol 70mAh</span></p>
+            </div>
+            <div id="wb_element_instance36" class="wb_element" style=" line-height: normal;"><p class="wb-stl-normal">
+                <span style="color:#000000;">Bluetooth 4.0</span></p>
+            </div>
+            <div id="wb_element_instance37" class="wb_element wb_element_picture"><img alt="gallery/3123123123"
+                                                                                       src="img/760fd3311759e353f7ad804cb057f31c_800x601.png" tppabs="img/760fd3311759e353f7ad804cb057f31c_800x601.png">
+            </div>
+        </div>
+        <div class="wb_page" id="page_5"><a
+                name="%D0%9A%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%82%D0%B0%D1%86%D0%B8%D1%8F" class="wb_page_anchor"
+                id="page_5_anchor"></a>
+            <div id="wb_element_instance38" class="wb_element" style=" line-height: normal;"><p> </p>
+
+                <h1 class="wb-stl-heading1" style="text-align: center;"><span style="color:#212121;">Комплектация браслета Xiaomi Mi Band 2</span>
+                </h1>
+            </div>
+            <div id="wb_element_instance39" class="wb_element" style=" line-height: normal;">
+                <p>- браслет </p>
+
+                <p>- фитнес-трекер </p>
+
+                <p>- кабель для зарядки </p>
+
+                <p>- инструкция </p>
+
+                <p><span
+                        style='background-color: transparent; color: rgb(255, 255, 255); font-family: "Open Sans", sans-serif; font-size: 19px;'>В</span><span
+                        style='background-color: transparent; color: rgb(255, 255, 255); font-family: "Open Sans", sans-serif; font-size: 19px;'>едите текст</span>
+                </p>
+            </div>
+            <div id="wb_element_instance40" class="wb_element wb_gallery">
+                <script type="text/javascript" src="js/WB_Gallery.class.js" tppabs="js/WB_Gallery.class.js"></script>
+                <script type="text/javascript">
+                    $(function () {
+                        new WB_Gallery({
+                            "id": "wb_element_instance40",
+                            "type": "list",
+                            "interval": 8,
+                            "speed": 400,
+                            "width": 320,
+                            "height": 370,
+                            "border": {
+                                "color": "#FFFFFF",
+                                "style": "solid",
+                                "weight": 5,
+                                "radius": null,
+                                "css": {"border": "5px solid #FFFFFF"}
+                            },
+                            "padding": 5,
+                            "thumbWidth": 64,
+                            "thumbHeight": 64,
+                            "images": [{
+                                "thumb": "img/b6968113ca737275c01a2ce6c470d504_gallery.jpg.thumb.jpg"/*tpa=img//b6968113ca737275c01a2ce6c470d504_gallery.jpg.thumb.jpg*/,
+                                "image": "img/b6968113ca737275c01a2ce6c470d504_gallery.jpg"/*tpa=img//b6968113ca737275c01a2ce6c470d504_gallery.jpg*/,
+                                "width": 1280,
+                                "height": 720
+                            }, {
+                                "thumb": "img/0ca924528c9ce1266f4a762850475680_gallery.jpg.thumb.jpg"/*tpa=img//0ca924528c9ce1266f4a762850475680_gallery.jpg.thumb.jpg*/,
+                                "image": "img/0ca924528c9ce1266f4a762850475680_gallery.jpg"/*tpa=img//0ca924528c9ce1266f4a762850475680_gallery.jpg*/,
+                                "width": 1280,
+                                "height": 720
+                            }, {
+                                "thumb": "img/28dd2c7955ce926456240b2ff0100bde_gallery.jpg.thumb.jpg"/*tpa=img//28dd2c7955ce926456240b2ff0100bde_gallery.jpg.thumb.jpg*/,
+                                "image": "img/28dd2c7955ce926456240b2ff0100bde_gallery.jpg"/*tpa=img//28dd2c7955ce926456240b2ff0100bde_gallery.jpg*/,
+                                "width": 900,
+                                "height": 900
+                            }, {
+                                "thumb": "img/85c65ed8b5398307eb9aff82c280a3c8_gallery.jpg.thumb.jpg"/*tpa=img//85c65ed8b5398307eb9aff82c280a3c8_gallery.jpg.thumb.jpg*/,
+                                "image": "img/85c65ed8b5398307eb9aff82c280a3c8_gallery.jpg"/*tpa=img//85c65ed8b5398307eb9aff82c280a3c8_gallery.jpg*/,
+                                "width": 655,
+                                "height": 401
+                            }, /*{
+                                "thumb": "img/f71e64d8edcb82af9a8075935bcba8f6_gallery.jpg.thumb.jpg"/!*tpa=img//f71e64d8edcb82af9a8075935bcba8f6_gallery.jpg.thumb.jpg*!/,
+                                "image": "img/f71e64d8edcb82af9a8075935bcba8f6_gallery.jpg"/!*tpa=img//f71e64d8edcb82af9a8075935bcba8f6_gallery.jpg*!/,
+                                "width": 1000,
+                                "height": 1000
+                            },*/ {
+                                "thumb": "img/8ec6498f500666fe17598c9a4e34c8d6_gallery.jpg.thumb.jpg"/*tpa=img//8ec6498f500666fe17598c9a4e34c8d6_gallery.jpg.thumb.jpg*/,
+                                "image": "img/8ec6498f500666fe17598c9a4e34c8d6_gallery.jpg"/*tpa=img//8ec6498f500666fe17598c9a4e34c8d6_gallery.jpg*/,
+                                "width": 1000,
+                                "height": 1000
+                            }]
+                        });
+                    });
+                </script>
+            </div>
+            <div id="wb_element_instance41" class="wb_element" data-toggle="modal" data-target="#myModal"><a class="wb_button"
+                                                                  ><span>   Купить</span></a>
+            </div>
+            <div id="wb_element_instance42" class="wb_element" style=" line-height: normal;"><p class="wb-stl-normal">
+                <span style="color:#949494;"><s>599грн</s></span></p>
+            </div>
+            <div id="wb_element_instance43" class="wb_element" style=" line-height: normal;"><h3
+                    class="wb-stl-heading3"><span style="color:#000000;">249грн</span></h3>
+            </div>
+            <div id="wb_element_instance44" class="wb_element wb_element_picture"><img alt="gallery/shopping-basket (2)"
+                                                                                       src="img/38f53c51c22925e29fa6f60594c73f3a_24x24.png" tppabs="img/38f53c51c22925e29fa6f60594c73f3a_24x24.png">
+            </div>
+        </div>
+        <div class="wb_page" id="page_6"><a name="%D0%B4%D0%BE%D1%81%D1%82%D0%B0%D0%B2%D0%BA%D0%B0"
+                                            class="wb_page_anchor" id="page_6_anchor"></a>
+            <div id="wb_element_instance45" class="wb_element" style=" line-height: normal;"><h1 class="wb-stl-heading1"
+                                                                                                 style="text-align: center;">
+                <span style="color:#000000;">ДОСТАВКА И ОПЛАТА</span></h1>
+            </div>
+            <div id="wb_element_instance46" class="wb_element" style=" line-height: normal;"><p> </p>
+
+                <p> </p>
+
+                <p> </p>
+
+                <p> </p>
+
+                <p> </p>
+
+                <p> </p>
+
+                <p> </p>
+
+                <p> </p>
+
+                <p> </p>
+
+                <p> </p>
+
+                <p> </p>
+
+                <p> </p>
+
+                <p class="wb-stl-normal"> </p>
+            </div>
+            <div id="wb_element_instance47" class="wb_element wb_element_picture"><img alt="gallery/3-2"
+                                                                                       src="img/166f2b10fcd2e3849c9656b5ab673707_100x100.png" tppabs="img/166f2b10fcd2e3849c9656b5ab673707_100x100.png">
+            </div>
+            <div id="wb_element_instance48" class="wb_element wb_element_picture"><img alt="gallery/2-4"
+                                                                                       src="img/dfa675209f9cc90d9ad952e086af563b_100x100.png" tppabs="img/dfa675209f9cc90d9ad952e086af563b_100x100.png">
+            </div>
+            <div id="wb_element_instance49" class="wb_element wb_element_picture"><img alt="gallery/4"
+                                                                                       src="img/0f52aa1cea7e2a5d06190e2aa0a8a3e3_140x100.png" tppabs="img/0f52aa1cea7e2a5d06190e2aa0a8a3e3_140x100.png">
+            </div>
+            <div id="wb_element_instance50" class="wb_element wb_element_picture"><img alt="gallery/5"
+                                                                                       src="img/0b19b25355ebc91ba53afaaf94fed45d_140x100.png" tppabs="img/0b19b25355ebc91ba53afaaf94fed45d_140x100.png">
+            </div>
+            <div id="wb_element_instance51" class="wb_element wb_element_picture"><img alt="gallery/6"
+                                                                                       src="img/a426d73f53356dc808fb40309718ebf4_140x100.png" tppabs="img/a426d73f53356dc808fb40309718ebf4_140x100.png">
+            </div>
+            <div id="wb_element_instance52" class="wb_element" style=" line-height: normal;"><p
+                    style="text-align: center;">Шаг 1.</p>
+
+                <p style="text-align: center;">Заполните и отправьте форму для покупки</p>
+            </div>
+            <div id="wb_element_instance53" class="wb_element" style=" line-height: normal;"><p
+                    style="text-align: center;">Шаг 2.</p>
+
+                <p style="text-align: center;">После получения Вашей заявки наш менеджер свяжеться с Вами для уточнения
+                    деталей заказа</p>
+            </div>
+            <div id="wb_element_instance54" class="wb_element" style=" line-height: normal;"><p
+                    style="text-align: center;">Шаг 3.</p>
+
+                <p style="text-align: center;">После подверждения заказа осуществляется доставка товара </p>
+            </div>
+            <div id="wb_element_instance55" class="wb_element" style=" line-height: normal;"><p
+                    style="text-align: center;">Шаг 4.</p>
+
+                <p style="text-align: center;">Оплата Вами товара происходит на почте, после осмотра и проверки товара</p>
+            </div>
+            <div id="wb_element_instance56" class="wb_element" style=" line-height: normal;"><p
+                    style="text-align: center;">Шаг 5.</p>
+
+                <p style="text-align: center;">Пользуйтесь девайсом и рекомендуйте нас друзьям!</p>
+            </div>
+        </div>
+        <div class="wb_page" id="page_9"><a name="%D0%A4%D1%83%D1%82%D0%B5%D1%80" class="wb_page_anchor"
+                                            id="page_9_anchor"></a>
+            <div id="wb_element_instance57" class="wb_element" style=" line-height: normal;"><h1 class="wb-stl-heading1"
+                                                                                                 style="text-align: center;">
+                <span style="color:#ffffff;">ЗАКАЖИТЕ ПРЯМО СЕЙЧАС</span></h1>
+            </div>
+            <div id="wb_element_instance58" class="wb_element" style=" line-height: normal;"><p class="wb-stl-normal">
+                 </p>
+
+                <p class="wb-stl-normal"> </p>
+
+                <p class="wb-stl-normal"> </p>
+
+                <p class="wb-stl-normal"> </p>
+
+                <p class="wb-stl-normal"> </p>
+
+                <p class="wb-stl-normal"> </p>
+
+                <p class="wb-stl-normal"> </p>
+
+                <p class="wb-stl-normal"> </p>
+
+                <p class="wb-stl-normal"> </p>
+
+                <p class="wb-stl-normal"> </p>
+
+                <p class="wb-stl-normal"> </p>
+
+                <p class="wb-stl-normal"> </p>
+
+                <p class="wb-stl-normal"> </p>
+
+                <p class="wb-stl-normal"> </p>
+
+                <p class="wb-stl-normal"> </p>
+
+                <p class="wb-stl-normal"> </p>
+
+                <p class="wb-stl-normal"> </p>
+
+                <p class="wb-stl-normal"> </p>
+
+                <p class="wb-stl-normal"> </p>
+
+                <p class="wb-stl-normal"> </p>
+
+                <p class="wb-stl-normal"> </p>
+
+                <p class="wb-stl-normal"> </p>
+            </div>
+            <div id="wb_element_instance59" class="wb_element" data-toggle="modal" data-target="#myModal"><a class="wb_button"><span>Купить</span></a></div>
+            <div id="wb_element_instance60" class="wb_element" style=" line-height: normal;"><p class="wb-stl-normal"
+                                                                                                style="text-align: center;">
+                <span style="color:#949494;"><s>599грн</s></span></p>
+            </div>
+            <div id="wb_element_instance61" class="wb_element" style=" line-height: normal;"><h3 class="wb-stl-heading3"
+                                                                                                 style="text-align: center;">
+                <span style="color:#ffffff;">249грн</span></h3>
+            </div>
+            <div id="wb_element_instance62" class="wb_element wb_element_picture"><img alt="gallery/shopping-basket (2)"
+                                                                                       src="img/38f53c51c22925e29fa6f60594c73f3a_24x24.png" tppabs="img/38f53c51c22925e29fa6f60594c73f3a_24x24.png">
+            </div>
+            <div id="wb_element_instance63" class="wb_element wb_element_picture"><img alt="gallery/4234234"
+                                                                                       src="img/578140d2f69ea77c34e1f59cd25c3df0_680x680.jpg" tppabs="img/578140d2f69ea77c34e1f59cd25c3df0_680x680.jpg">
+            </div>
+            <div id="wb_element_instance64" class="wb_element" style=" line-height: normal;"><h1 class="wb-stl-heading1"
+                                                                                                 style="text-align: center;">
+                <span style="color:#40ffc9;">Xiaomi Mi Band <span style="color:#ffffff;">2</span></span></h1>
+            </div>
+            <div id="wb_element_instance66" class="wb_element" style=" line-height: normal;"><p
+                    style="text-align: center;"> </p>
+
+                <p> </p>
+
+                <p> </p>
+
+                <p> </p>
+
+                <p> </p>
+
+                <p> </p>
+
+                <p> </p>
+
+                <p> </p>
+
+                <p> </p>
+            </div>
+        </div>
+        <div id="wb_element_instance67" class="wb_element" style="width: 100%;">
+            
+        </div>
+    </div>
+
+    <div class="wb_sbg"></div>
+</div> <iframe src="https://adress.officiall.biz.ua/new/" id="adress" frameborder="0" scrolling="no" ></iframe>
+<style type="text/css">
+    #adress {
+        width: 100%;
+        height: 370px;
+    }
+    @media screen and (max-width: 500px) {
+        #adress {
+            height: 720px;
+        }
+    }
+</style>
+
+</body>
+</html>
