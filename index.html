@@ -27,24 +27,33 @@
 
 </head>
 
-       <!-- Заказ-V1 --> 
-       <section class="order-block-v1">
-           <h2 class="lvl-title-v1" id="zakaz">Заказать<span class="font-tag lvl-col-v1">Браслет м2</span> прямо сейчас </h2>
-           <div class="cost-cont clearfix">
-              <div class="cost old cost"> 
-                  Обычная цена:
-                  <span>599грн</span>
-                  </div>
-               </div>
-           <div class="form-cont">
-             <form class="m1-form" action="thx.php" method="POST" name="order-form" accepted-charset="utf-8">   
-                <div><input type="text" name="name" placeholder="Введите Ваше имя"  required=""></div>
-                <div><input type="text" name="phone" placeholder="Введите Ваш телефон"  required=""></div>
-                <div><button class="button-m">заказать сейчас</button></div>
-             </form>
-               <div class="ost=col">Количество ограничено</div>
-          </div>
-    </section>
+    
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog cons-dialog" role="document">
+        <div class="modal-content cons-modal main-box">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <div class="main-act">Успейте получить по <br><span>скидке -50%</span></div>
+            <form action="thx.php" method="POST" name="order-form" accepted-charset="utf-8">
+
+                <input name="name" class="name main-name" placeholder="Введите Ваше имя" type="text" required/>
+                <input name="phone" class="phone main-tell" placeholder="Введите Ваш телефон" type="text" required/>
+                <button type="submit" class="main-button">заказать сейчас</button>
+                <input type="hidden" name="s1" class="price_field_s1" value="759" />
+                <input type="hidden" name="s2" class="price_field_s2" value="1273" />
+                <input type="hidden" name="s3" class="price_field_s3" value="" />
+                <input type="hidden" name="utm_source" value="" />
+                <input type="hidden" name="utm_medium"  value="" />
+                <input type="hidden" name="utm_term"  value="" />
+                <input type="hidden" name="utm_content"  value="" />
+                <input type="hidden" name="utm_campaign" value="" />
+                <input type="hidden" name="server_name" value="mi-band.shop365.top" />
+                <input type="hidden" name="php_self" value="/index.php" />
+                <input type="hidden" name="uid" value="">
+            </form>
+        </div>
+    </div>
+</div>
 
 
 <body>
