@@ -1,325 +1,9 @@
-
-
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-
-
-<script>
-function sendData(sendTo, GET_Var ,json_obj, changeLocation, timeToOff, land_or_blog, gotopage) {
-	 	
-//оперделяем браузер
-	 	var ua = navigator.userAgent;
-
-        function bName() {
-
-            if (ua.search(/MSIE/) > -1) return "ie";
-
-            if (ua.search(/Firefox/) > -1) return "firefox";
-
-            if (ua.search(/Opera/) > -1) return "opera";
-
-            if (ua.search(/Chrome/) > -1) return "chrome";
-
-            if (ua.search(/Safari/) > -1) return "safari";
-
-            if (ua.search(/Konqueror/) > -1) return "konqueror";
-
-            if (ua.search(/Iceweasel/) > -1) return "iceweasel";
-
-            if (ua.search(/SeaMonkey/) > -1) return "seamonkey";
-        };
-
-
-	var startTime = new Date().getTime();
-	var timeAfter = startTime + timeToOff;
-	var doc = document.body;
-//-------------Start function-------------------
-//выносим эту переменную которая будет сразу выполнятся при старте скрипта(страницы )
-var unparseParams = jsonToParametr();
-
-
-//----------------------------------
-
-//проверка передали ли мы время
-if(timeToOff){
-	//После времени которое указываем в timeToOff срабатывает отправка
-	var timerOn = setTimeout(function tick(){
-
-		/*console.log('tick');
-		console.log(startTime);
-		console.log(timeAfter);*/
-
-		if(new Date().getTime() >= timeAfter){
-				console.log(' DATA SEND ');	
-			clearTimeout(timerOn);
-			sendTimeBeforeClose();
-
-			return false;
-		};
-
-
-		timerOn = setTimeout(tick, timeToOff);
-
-	},timeToOff);
-};
-
-
-
-
-//------------------------------------
-
-	//прикрепляем событие
-	IeOrNormBrowserEvent('beforeunload', sendTimeBeforeClose);
-
-/*	if(land_or_blog == 'blog'){	
-	console.log('blog');
-	IeOrNormBrowserEvent('click', sendDataOnClick);
-	}else if(land_or_blog == "land"){
-	console.log('land');
-	};*/
-/*	window.onbeforeunload = function(event){
-		event = event || window.event;
-		var target = event.target || event.srcElement;
-		sendTimeBeforeClose(event);
-	};*/
-
-if(land_or_blog == 'blog'){	
-	console.log('blog');
-	//ГОРИ В АДУ ИЕ!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-	document.onclick = function (event){
-		event = event || window.event;
-		var target = event.target || event.srcElement;
-		console.log(target.tagName);
-
-
-    //проверка является ли родительским элементом А
-    while (target != doc) {
-        if (target.tagName == "A"){
-			console.log(target.tagName);
-			var probiv = true;
-			sendTimeBeforeClose(event,probiv,changeLocation);
-          break;
-        };
-      target = target.parentNode;
-    };
-		/*if(target.tagName == "A"){
-			console.log(target.tagName);
-			var probiv = true;
-			sendTimeBeforeClose(event,probiv,changeLocation);
-		};*/
-	
-};
-}else if(land_or_blog == "land"){
-	console.log('land');
-};
-//функция для события клик
-//
-/*function sendDataOnClick(event){
-	console.log('run');
-	event = event || window.event;
-	var target = event.target || event.srcElement;
-
-console.log(target.tagName);
-	  //проверка является ли родительским элементом А
-    while (target != doc) {
-        if (target.tagName == "A"){
-			console.log(target.tagName);
-			var probiv = true;
-			sendTimeBeforeClose(event,probiv,changeLocation);
-          break;
-        };
-      target = target.parentNode;
-    };
-	
-};
-*/
-//---------------Add Function------------------
-
-//полифил под обработчик события для гавно-браузера IE и нормальных  браузеров
-	function IeOrNormBrowserEvent(event, func){
-
-		//если есть такой метод то юзаем его
-		if(window.addEventListener){
-			window.addEventListener(event, func);
-		}else{
-			window.attachEvent("on"+event, func);
-		};
-
-
-	};
-
-//---------------------Kill Event----------------
-//
-function killEvent(event, func){
-	if(window.addEventListener){
-		window.removeEventListener(event, func);
-	}else{
-		window.detachEvent("on"+event, func);
-	};
-};
-
-
-//--------------------------------------
-
-//возвращает время проведеное на сайте в секундах
-	function calcTimeOnPage (){
-
-		var timeNow = new Date().getTime();
-		var timeDiff = timeNow - startTime;
-		/*var timeInSec = timeDiff/1000;*/
-		return timeDiff;
-		
-	};
-
-
-
-
-//---------------------------------
-
-//приводим масив с пхп в нормальное состояние 
-
-
-	function jsonToParametr(){
-		var params = ""; 
-		for( var key in json_obj ){
-			params += "&"+key+"="+json_obj[key];
-		};
-		//console.log(params);	
-		return params;
-	};
-
-
-
-//отправка данных на сервер
-	function sendTimeBeforeClose(event,probiv) {
-
-		 //удаляем события
-		killEvent('beforeunload', sendTimeBeforeClose);
-		/*window.onbeforeunload = function(event){
-		
-		};*/
-		document.onclick = function(e){
-			
-		};
-		/*killEvent('click', sendDataOnClick);*/
-
-		var userTimeOnPage = calcTimeOnPage();
-		var cancel;
-		if(userTimeOnPage > 15000){
-			cancel = 0;
-		}else{
-			cancel = 1;
-		}
-		if(probiv){
-			unparseParams += "&"+GET_Var+'='+userTimeOnPage+"&probiv=1"+"&cancel="+cancel;
-			probiv = false;
-		}else{
-			unparseParams += "&"+GET_Var+'='+userTimeOnPage+"&probiv=0"+"&cancel="+cancel;
-		};
-		
-		 if((arguments[2]) && (arguments[2] != '')){
-		 	if(bName() == 'safari'){
-		 		window.open(gotopage, '_blank');
-		 		window.location.href = changeLocation;
-		 	}else{
-
-		 		/*window.open(gotopage, '_blank');*/
-		 		window.location.href = changeLocation;
-
-		 	};
-	   		
-	   };
-		
-		var xhr = CreateRequest();
-		//
-		
-		unparseParams = unparseParams.replace("&","?");
-
-	    xhr.open('GET', sendTo + unparseParams, false);
-
-	    //устанавливаем заголовки
-
-	    
-	    // для POST
-	    /*xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded; charset=utf-8");
-	    //отправляем данные	
-        xhr.send(postVar+"="+userTimeOnPage+"");*/
-
-
-        // для GET
-       /* xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");*/
-        //для гета тело запроса пустое!
-        xhr.send(null);
-	 
-     
-        //обнуляем нашу строку параметров. зачем? яхз...чесн
-        /*unparseParams = "";*/
-
-        //или же заместь всего кода с аджаксом юзаем картинку.....
-		//document.write('<img src="index2.php/?'+unparseParams+'">');
-		
-
-
-		/*event.preventDefault ? event.preventDefault() : (event.returnValue=false);*/
-		/*return true;*/
-
-	};
-
-
-
-
-//-------------------------------------
-//Полифил для аджакса
-	function CreateRequest(){
-
-	    var Request = false;
-
-	    if (window.XMLHttpRequest)
-	    {
-	        //Gecko-совместимые браузеры, Safari, Konqueror
-	        Request = new XMLHttpRequest();
-	    }
-	    else if (window.ActiveXObject)
-	    {
-	        //Internet explorer
-	        try
-	        {
-	             Request = new ActiveXObject("Microsoft.XMLHTTP");
-	        }    
-	        catch (CatchException)
-	        {
-	             Request = new ActiveXObject("Msxml2.XMLHTTP");
-	        }
-	    }
-	 
-	    if (!Request)
-	    {
-	        alert("Невозможно создать XMLHttpRequest");
-	    }
-	    
-	    return Request;
-	};
-
-
-	console.log(startTime);
-
-};</script>
-
-<script>
-    // записываем сюда наш обьект который пришел с пхп (предварительно обработан json_encode)
-    var dataPHP = {"id":"\r\n\r\narray(0) {\n}\n","lan":"1","region":"\u041a\u0438\u0435\u0432","city":"\u041a\u0438\u0435\u0432"};
-    // 'index2.php' - 1й аргумент это путь куда будет передан гет массив с ф-ции
-    // 'timeOnPage' - 2й аргумент с каким именем будет приниматься время проведенное на сайте
-    // dataPHP - 3й аргумент передает объект в формате json
-    // 4й аргумент куда будет переадресована страничка при клике на ссылку(для блогов) для лендов указывать пустую строку
-    //5й аргумент время после которого срабытывает отправка данных
-    //6й аргумент 'blog' или 'land' если блог то устанавливаеться событие на клик по ссылке если land то не устанавливается
-    sendData('http://dropplatforma.ru/api_order/update_stat/', 'timeOnPage', dataPHP, '', '', 'land');
-
-</script>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
-    <title>Главная</title>
+
+    <title>Фитнес браслет</title>
     <base href=""/>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
     <meta name="description" content=""/>
@@ -349,7 +33,7 @@ function killEvent(event, func){
         <div class="modal-content cons-modal main-box">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
             <div class="main-act">Успейте получить по <br><span>скидке -50%</span></div>
-            <form action="zakaz.php" method="post">
+            <form action="thx.php" method="POST" name="order-form" accepted-charset="utf-8">
 
                 <input name="name" class="name main-name" placeholder="Введите Ваше имя" type="text" required/>
                 <input name="phone" class="phone main-tell" placeholder="Введите Ваш телефон" type="text" required/>
@@ -362,7 +46,7 @@ function killEvent(event, func){
                 <input type="hidden" name="utm_term"  value="" />
                 <input type="hidden" name="utm_content"  value="" />
                 <input type="hidden" name="utm_campaign" value="" />
-                <input type="hidden" name="server_name" value="mi-band.shop365.top" />
+               <input type="hidden" name="server_name" value="mi-band.shop365.top" />
                 <input type="hidden" name="php_self" value="/index.php" />
                 <input type="hidden" name="uid" value="">
             </form>
@@ -375,14 +59,7 @@ function killEvent(event, func){
 
 <body>
 
-<!--
 
-<script type="text/javascript" id="adpartner_init">
-var adexQ = adexQ || [];
-var adexCID = 51;
-!function(e){var t=e.createElement("script");t.type="text/javascript",t.async=!0,t.src="js/rmrkt.lib.js"/*tpa=https://a4p.adpartner.pro/rmrkt.lib.js*/;var r=e.getElementById("adpartner_init");r.parentNode.insertBefore(t,r)}(window.document);
-</script>
--->
 
 <div class="root">
     <div id="wb_bgs_cont">
@@ -438,10 +115,10 @@ var adexCID = 51;
             <div id="wb_element_instance8" class="wb_element" style=" line-height: normal;"><h4 class="wb-stl-pagetitle"><span style="color:#000000;">XIAOMI MI BAND 2</span></h4>
             </div>
             <div id="wb_element_instance9" class="wb_element" style=" line-height: normal;"><p class="wb-stl-normal" style="text-align: right;">
-                <span style="color:#949494;"><s>1518грн</s></span></p>
+                <span style="color:#949494;"><s>599грн</s></span></p>
             </div>
             <div id="wb_element_instance10" class="wb_element" style=" line-height: normal;"><h3
-                    class="wb-stl-heading3"><span style="color:#000000;">759грн</span></h3>
+                    class="wb-stl-heading3"><span style="color:#000000;">249грн</span></h3>
             </div>
             <div id="wb_element_instance11" class="wb_element wb_element_picture"><img alt="gallery/shopping-basket (2)" src="img/38f53c51c22925e29fa6f60594c73f3a_24x24.png" tppabs="img/38f53c51c22925e29fa6f60594c73f3a_24x24.png">
             </div>
@@ -730,10 +407,10 @@ var adexCID = 51;
                                                                   ><span>   Купить</span></a>
             </div>
             <div id="wb_element_instance42" class="wb_element" style=" line-height: normal;"><p class="wb-stl-normal">
-                <span style="color:#949494;"><s>1518грн</s></span></p>
+                <span style="color:#949494;"><s>599грн</s></span></p>
             </div>
             <div id="wb_element_instance43" class="wb_element" style=" line-height: normal;"><h3
-                    class="wb-stl-heading3"><span style="color:#000000;">759грн</span></h3>
+                    class="wb-stl-heading3"><span style="color:#000000;">249грн</span></h3>
             </div>
             <div id="wb_element_instance44" class="wb_element wb_element_picture"><img alt="gallery/shopping-basket (2)"
                                                                                        src="img/38f53c51c22925e29fa6f60594c73f3a_24x24.png" tppabs="img/38f53c51c22925e29fa6f60594c73f3a_24x24.png">
@@ -867,11 +544,11 @@ var adexCID = 51;
             <div id="wb_element_instance59" class="wb_element" data-toggle="modal" data-target="#myModal"><a class="wb_button"><span>Купить</span></a></div>
             <div id="wb_element_instance60" class="wb_element" style=" line-height: normal;"><p class="wb-stl-normal"
                                                                                                 style="text-align: center;">
-                <span style="color:#949494;"><s>1518грн</s></span></p>
+                <span style="color:#949494;"><s>599грн</s></span></p>
             </div>
             <div id="wb_element_instance61" class="wb_element" style=" line-height: normal;"><h3 class="wb-stl-heading3"
                                                                                                  style="text-align: center;">
-                <span style="color:#ffffff;">759грн</span></h3>
+                <span style="color:#ffffff;">249грн</span></h3>
             </div>
             <div id="wb_element_instance62" class="wb_element wb_element_picture"><img alt="gallery/shopping-basket (2)"
                                                                                        src="img/38f53c51c22925e29fa6f60594c73f3a_24x24.png" tppabs="img/38f53c51c22925e29fa6f60594c73f3a_24x24.png">
@@ -904,11 +581,7 @@ var adexCID = 51;
             </div>
         </div>
         <div id="wb_element_instance67" class="wb_element" style="width: 100%;">
-            <script type="text/javascript">
-                $(function () {
-                    $("#wb_element_instance67").hide();
-                });
-            </script>
+            
         </div>
     </div>
 
@@ -924,69 +597,7 @@ var adexCID = 51;
             height: 720px;
         }
     }
-</style>  <script type="text/javascript">
+</style>
 
-    $(function(){
-        var uId___ =  "";
-        var comment__ = '';
-        var frm = document.getElementsByTagName('form');
-        var code =
-
-            '<input type="hidden" name="uid" value="'+uId___+'" class="only_number" required>'+
-            '<input type="hidden" name="comment" value="'+comment__+'" />';
-
-        for (i = 0; i < frm.length; i++) {
-            frm[i].innerHTML += code;
-        }
-
-        /*
-                    $("[name='comment']").on("change", function(){
-                        var val = $(this).val();
-                        $("[name='comment']").val(val);
-                    });
-        */
-
-    });
-</script>
-
-<script type="text/javascript">
-
-
-    $(document).ready(function() {
-
-        Inputmask.extendDefinitions({
-
-            '~': {
-                validator: "[1245679]"
-            }
-
-        });
-        $("input[name='name']").on("keypress", function (e) {
-            return (/[A-Za-zА-Яа-яЁё\s]/.test(String.fromCharCode(e.charCode)));
-        })
-        $("input[name='phone']").inputmask({
-            mask: "+38 (0~9) 999-99-99",
-            greedy: false,
-            clearIncomplete: true,
-            placeholder: "_",
-            rightAlign: false,
-            showMaskOnHover: false,
-            showMaskOnFocus: true
-        });
-        $("input[name='phone']").on("keydown", function (e) {
-
-            if(e.keyCode == 37 || e.keyCode == 38 || e.keyCode == 39 || e.keyCode == 40){
-                e.preventDefault();
-                return false;
-            }
-
-        });
-
-
-       
-
-    });
-
-</script>
 </body>
 </html>
